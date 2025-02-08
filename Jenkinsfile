@@ -15,7 +15,7 @@ node {
             }
         }
     }
-    docker.image('cdrx/pyinstaller-linux:python2').inside {
+    docker.image('batonogov/pyinstaller-linux').inside("--entrypoint=''") {
         stage('Deliver') {
             try {
                 sh 'pyinstaller --onefile sources/add2vals.py'

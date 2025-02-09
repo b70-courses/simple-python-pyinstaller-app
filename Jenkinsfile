@@ -16,7 +16,7 @@ node {
         }
     }
     docker.image('batonogov/pyinstaller-linux').inside("--entrypoint=''") {
-        stage('Deliver') {
+        stage('Deploy') {
             try {
                 sh 'pyinstaller --onefile sources/add2vals.py'
                 // delivers the website into EC2 instance via SSH
